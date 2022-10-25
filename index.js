@@ -11,6 +11,10 @@ const app = express();
 //* this is to use middleware stuff
 app.use(logger);
 
+//* Body Parser middleware
+//? Used so POST method would respond with request body?
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 //* set a static folder
 app.use(express.static(path.join(__dirname, 'public')));

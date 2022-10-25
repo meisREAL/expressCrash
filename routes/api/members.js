@@ -1,4 +1,5 @@
 const express = require('express');
+const uuid = require('uuid');
 const router = express.Router();
 const members = require('../../Members');
 
@@ -23,6 +24,24 @@ router.get('/:id', (req, res) => {
         res.status(400).json({ message: `No member with id ${req.params.id}` });
     }
 
+});
+
+// POST (create) a member
+router.post('/', (req, res) => {
+    const newMember = {
+        id: uuid.v4(), //Generates random universal ID
+        name: req.body.name,
+        email: req.body.email,
+        status: 'active' //todo: change from hardcoded status later
+    };
+
+    if (!newMember.name || !newMember.email) {
+        //! use return to avoid err => headers already sent, or use else statement to avoid err
+        return res.status(400).json({ message: 'Please include name and email' });
+    }
+
+    members.push(newMember);
+    res.json(members);
 });
 
 module.exports = router;
