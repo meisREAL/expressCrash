@@ -1,0 +1,23 @@
+{
+  "name": "expresscrash",
+  "version": "1.0.0",
+  "description": "express crash course from youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meisREAL/expressCrash.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meisREAL/expressCrash/issues"
+  },
+  "homepage": "https://github.com/meisREAL/expressCrash#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
